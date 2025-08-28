@@ -4,8 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Toast JS</title>
+    <script src="./src/toasty.js"></script>
   </head>
   <body>
     <p>Hello world</p>
+
+    <script>
+      // Create & show
+      const t = toasty({ text: "Hello, world!", position: "top-right" }).show();
+
+      // Update dynamically
+      setTimeout(() => {
+        t.setText("Updated message")
+        .setStyle({ background: "blue" });
+      }, 1000);
+
+      // Clear all toasts
+      setTimeout(() => {
+        toasty.clearAll();
+      }, 5000);
+    </script>
   </body>
 </html>
